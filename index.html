@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>7 Konsep OOP</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #020617;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #38bdf8;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #38bdf8;
+        }
+
+        .container {
+            padding: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 kolom */
+            gap: 12px 24px;
+            background: #020617;
+            padding: 16px;
+            border-radius: 10px;
+            color: #e5e7eb;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(56,189,248,0.2);
+        }
+
+        .profile-grid p {
+            margin: 6px 0;
+        }
+
+        #oops {
+            grid-column: span 1; /* tetap kolom kanan */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #020617;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(56,189,248,0.2);
+        }
+
+        thead {
+            background-color: #020617;
+        }
+
+        th {
+            color: #38bdf8;
+            padding: 12px;
+            border-bottom: 2px solid #38bdf8;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        tr:hover {
+            /* background-color: #020617; */
+            background-color: #3b1e27;
+            color: #00ff5e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            background-color: #020617;
+            color: #94a3b8;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: #020617;
+            color: #94a3b8;
+            border: 2px solid #1e293b;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .tab-btn:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .tab-btn.active {
+            background: #38bdf8;
+            color: #020617;
+            border-color: #38bdf8;
+        }
+
+        .content-area {
+            background: #1a1d2d;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-section {
+            display: none;
+        }
+
+        .demo-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .code-block {
+            background: #0c1629;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 4px solid #38bdf8;
+        }
+
+        .code-block pre {
+            color: #e5e7eb;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+
+        .keyword { color: #f59e0b; }
+        .class-name { color: #38bdf8; }
+        .string { color: #10b981; }
+        .comment { color: #6b7280; font-style: italic; }
+
+        .output-box {
+            background: #0c1629;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px solid #10b981;
+            min-height: 100px;
+        }
+
+        .output-title {
+            color: #10b981;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .btn {
+            background: #38bdf8;
+            color: #020617;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 10px 5px;
+        }
+
+        .btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            border-radius: 6px;
+            border: 2px solid #1e293b;
+            background: #0c1629;
+            color: #e5e7eb;
+            font-size: 14px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #38bdf8;
+        }
+
+        .card {
+            background: #0c1629;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #1e293b;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>7 Konsep Object Oriented Programming (OOP)</h1>
+    <p>Pemrograman Berorientasi Objek - Java</p>
+</header>
+
+<div class="container">
+
+    <!-- IDENTITAS MAHASISWA -->
+    <div class="profile-grid">
+        <p><strong>Nama:</strong> <span id="nama">Hadyan Moch Haeza</span></p>
+        <p><strong>NIM:</strong> <span id="nim">123456789</span></p>
+        <p><strong>Jurusan:</strong> <span id="jurusan">Teknik Informatika</span></p>
+        <p><strong>Mata Kuliah:</strong> Pemrograman Berorientasi Objek</p>
+        <p><strong>Angkatan:</strong> 2023</p>
+    </div>
+
+    <!-- Isi OOP -->
+    <div class="profile-grid">
+        <p><strong>Object Oriented Programming (OOP):</strong></p>
+        <p id="oops">
+            Pemrograman berbasis objek yang menggunakan konsep seperti class, object, attribute, method,
+            encapsulation, inheritance, dan polymorphism.
+        </p>
+        <p>pada blog ini adalah tujuh konsep dasar Object Oriented Programming, yaitu Class, Object, Attribute, Method, Encapsulation, Inheritance, dan Polymorphism yang diimplementasikan menggunakan bahasa pemrograman JavaScript.”</p>
+    </div>
+
+    <!-- TABEL OOP -->
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Konsep OOP</th>
+                <th>Apa Itu</th>
+                <th>Penjelasan</th>
+                <th>Contoh Kehidupan Sehari-hari</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Class</td>
+                <td>Cetak biru</td>
+                <td>Rancangan atau template untuk membuat objek</td>
+                <td>Class Mobil</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Object</td>
+                <td>Hasil class</td>
+                <td>Wujud nyata dari sebuah class</td>
+                <td>Object Mobil</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Attribute</td>
+                <td>Ciri objek</td>
+                <td>Data atau karakteristik yang dimiliki objek</td>
+                <td>merek, warna, tahun</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Method</td>
+                <td>Perilaku</td>
+                <td>Aksi atau fungsi yang bisa dilakukan objek</td>
+                <td>info(), hitung</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Encapsulation</td>
+                <td>Pengamanan data</td>
+                <td>Menyembunyikan data agar tidak bisa diakses langsung</td>
+                <td>Rekening Bank</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Inheritance</td>
+                <td>Pewarisan</td>
+                <td>Class anak mewarisi sifat class induk</td>
+                <td>Mahasiswa extends Manusia</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Polymorphism</td>
+                <td>Banyak bentuk</td>
+                <td>Satu method memiliki perilaku berbeda</td>
+                <td>Hewan bersuara</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('class')">1. Class</button>
+        <button class="tab-btn" onclick="showTab('object')">2. Object</button>
+        <button class="tab-btn" onclick="showTab('attribute')">3. Attribute</button>
+        <button class="tab-btn" onclick="showTab('method')">4. Method</button>
+        <button class="tab-btn" onclick="showTab('encapsulation')">5. Encapsulation</button>
+        <button class="tab-btn" onclick="showTab('inheritance')">6. Inheritance</button>
+        <button class="tab-btn" onclick="showTab('polymorphism')">7. Polymorphism</button>
+    </div>
+
+    <div class="content-area">
+            <!-- CLASS -->
+            <div id="class" class="demo-section active">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">📋 Class - Blueprint/Template</h2>
+                <p style="margin-bottom: 20px;">Class adalah cetak biru untuk membuat objek. Seperti desain rumah sebelum dibangun.</p>
+                
+                <div class="code-block">
+                    <pre><span class="comment">// Contoh Class Mobil</span>
+<span class="keyword">class</span> <span class="class-name">Mobil</span> {
+    <span class="comment">// Attribute</span>
+    merek;
+    warna;
+    tahun;
+    
+    <span class="comment">// Constructor</span>
+    <span class="keyword">constructor</span>(merek, warna, tahun) {
+        <span class="keyword">this</span>.merek = merek;
+        <span class="keyword">this</span>.warna = warna;
+        <span class="keyword">this</span>.tahun = tahun;
+    }
+    
+    <span class="comment">// Method</span>
+    info() {
+        <span class="keyword">return</span> <span class="string">`Mobil ${this.merek} warna ${this.warna} tahun ${this.tahun}`</span>;
+    }
+}
+                    </pre>
+                </div>
+                
+                <button class="btn" onclick="demoClass()">Jalankan Demo</button>
+                <div class="output-box" id="classOutput"></div>
+            </div>
+
+            <!-- OBJECT -->
+            <div id="object" class="demo-section">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">🚗 Object - Instance dari Class</h2>
+                <p style="margin-bottom: 20px;">Object adalah wujud nyata dari class yang sudah dibuat.</p>
+                
+                <div class="code-block">
+                    <pre><span class="comment">// Membuat object dari class Mobil</span>
+<span class="keyword">let</span> mobil1 = <span class="keyword">new</span> <span class="class-name">Mobil</span>(<span class="string">"Toyota Avanza"</span>, <span class="string">"Hitam"</span>, 2023);
+<span class="keyword">let</span> mobil2 = <span class="keyword">new</span> <span class="class-name">Mobil</span>(<span class="string">"Honda Brio"</span>, <span class="string">"Merah"</span>, 2024);
+
+console.log(mobil1.info());
+console.log(mobil2.info());</pre>
+                </div>
+                
+                <div class="input-group">
+                    <label>Merek Mobil:</label>
+                    <input type="text" id="merekInput" placeholder="Contoh: Toyota Avanza">
+                </div>
+                <div class="input-group">
+                    <label>Warna:</label>
+                    <input type="text" id="warnaInput" placeholder="Contoh: Hitam">
+                </div>
+                <div class="input-group">
+                    <label>Tahun:</label>
+                    <input type="number" id="tahunInput" placeholder="Contoh: 2024">
+                </div>
+                
+                <button class="btn" onclick="demoObject()">Buat Object Mobil</button>
+                <div class="output-box" id="objectOutput"></div>
+            </div>
+
+            <!-- ATTRIBUTE -->
+            <div id="attribute" class="demo-section">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">🏷️ Attribute - Karakteristik Object</h2>
+                <p style="margin-bottom: 20px;">Attribute adalah data/ciri yang dimiliki oleh object.</p>
+                
+                <div class="code-block">
+                    <pre><span class="keyword">class</span> <span class="class-name">Mahasiswa</span> {
+    nama;
+    nim;
+    jurusan;
+    ipk;
+    
+    <span class="keyword">constructor</span>(nama, nim, jurusan, ipk) {
+        <span class="keyword">this</span>.nama = nama;
+        <span class="keyword">this</span>.nim = nim;
+        <span class="keyword">this</span>.jurusan = jurusan;
+        <span class="keyword">this</span>.ipk = ipk;
+    }
+}</pre>
+                </div>
+                
+                <button class="btn" onclick="demoAttribute()">Tampilkan Attributes</button>
+                <div class="output-box" id="attributeOutput"></div>
+            </div>
+
+            <!-- METHOD -->
+            <div id="method" class="demo-section">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">⚙️ Method - Perilaku Object</h2>
+                <p style="margin-bottom: 20px;">Method adalah fungsi/aksi yang bisa dilakukan object.</p>
+                
+                <div class="code-block">
+                    <pre><span class="keyword">class</span> <span class="class-name">Kalkulator</span> {
+    tambah(a, b) {
+        <span class="keyword">return</span> a + b;
+    }
+    
+    kurang(a, b) {
+        <span class="keyword">return</span> a - b;
+    }
+    
+    kali(a, b) {
+        <span class="keyword">return</span> a * b;
+    }
+    
+    bagi(a, b) {
+        <span class="keyword">return</span> b !== 0 ? a / b : <span class="string">"Error: Tidak bisa dibagi 0"</span>;
+    }
+}</pre>
+                </div>
+                
+                <div class="input-group">
+                    <label>Angka 1:</label>
+                    <input type="number" id="num1" placeholder="Masukkan angka pertama">
+                </div>
+                <div class="input-group">
+                    <label>Angka 2:</label>
+                    <input type="number" id="num2" placeholder="Masukkan angka kedua">
+                </div>
+                
+                <button class="btn" onclick="demoMethod('tambah')">Tambah</button>
+                <button class="btn" onclick="demoMethod('kurang')">Kurang</button>
+                <button class="btn" onclick="demoMethod('kali')">Kali</button>
+                <button class="btn" onclick="demoMethod('bagi')">Bagi</button>
+                <div class="output-box" id="methodOutput"></div>
+            </div>
+
+            <!-- ENCAPSULATION -->
+            <div id="encapsulation" class="demo-section">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">🔒 Encapsulation - Pengamanan Data</h2>
+                <p style="margin-bottom: 20px;">Encapsulation menyembunyikan data sensitif, hanya bisa diakses lewat method tertentu.</p>
+                <p style="color:#94a3b8; margin-bottom:10px;">Contoh ini diambil dari kehidupan sehari-hari seperti ATM, di mana saldo tidak bisa diakses langsung tanpa proses yang benar.</p>
+                
+                <div class="code-block">
+                    <pre><span class="keyword">class</span> <span class="class-name">RekeningBank</span> {
+    #saldo; <span class="comment">// Private attribute (pakai #)</span>
+    
+    <span class="keyword">constructor</span>(saldoAwal) {
+        <span class="keyword">this</span>.#saldo = saldoAwal;
+    }
+    
+    <span class="comment">// Getter - untuk melihat saldo</span>
+    getSaldo() {
+        <span class="keyword">return</span> <span class="keyword">this</span>.#saldo;
+    }
+    
+    <span class="comment">// Method untuk deposit</span>
+    deposit(jumlah) {
+        <span class="keyword">if</span> (jumlah > 0) {
+            <span class="keyword">this</span>.#saldo += jumlah;
+            <span class="keyword">return</span> <span class="string">`Deposit berhasil! Saldo: Rp ${this.#saldo.toLocaleString()}`</span>;
+        }
+        <span class="keyword">return</span> <span class="string">"Jumlah harus positif!"</span>;
+    }
+    
+    <span class="comment">// Method untuk tarik tunai</span>
+    tarikTunai(jumlah) {
+        <span class="keyword">if</span> (jumlah > <span class="keyword">this</span>.#saldo) {
+            <span class="keyword">return</span> <span class="string">"Saldo tidak cukup!"</span>;
+        }
+        <span class="keyword">this</span>.#saldo -= jumlah;
+        <span class="keyword">return</span> <span class="string">`Penarikan berhasil! Saldo: Rp ${this.#saldo.toLocaleString()}`</span>;
+    }
+}</pre>
+                </div>
+                
+                <div class="input-group">
+                    <label>Jumlah Transaksi:</label>
+                    <input type="number" id="transaksi" placeholder="Masukkan jumlah">
+                </div>
+                
+                <button class="btn" onclick="demoEncapsulation('deposit')">Deposit</button>
+                <button class="btn" onclick="demoEncapsulation('tarik')">Tarik Tunai</button>
+                <button class="btn" onclick="demoEncapsulation('cek')">Cek Saldo</button>
+                <div class="output-box" id="encapsulationOutput"></div>
+            </div>
+
+            <!-- INHERITANCE -->
+            <div id="inheritance" class="demo-section">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">👨‍👦 Inheritance - Pewarisan</h2>
+                <p style="margin-bottom: 20px;">Class anak mewarisi sifat dan method dari class induk.</p>
+                
+                <div class="code-block">
+                    <pre><span class="comment">// Class Induk</span>
+<span class="keyword">class</span> <span class="class-name">Manusia</span> {
+    <span class="keyword">constructor</span>(nama, umur) {
+        <span class="keyword">this</span>.nama = nama;
+        <span class="keyword">this</span>.umur = umur;
+    }
+    
+    perkenalan() {
+        <span class="keyword">return</span> <span class="string">`Halo, nama saya ${this.nama}, umur ${this.umur} tahun`</span>;
+    }
+}
+
+<span class="comment">// Class Anak mewarisi dari Manusia</span>
+<span class="keyword">class</span> <span class="class-name">Mahasiswa</span> <span class="keyword">extends</span> <span class="class-name">Manusia</span> {
+    <span class="keyword">constructor</span>(nama, umur, nim, jurusan) {
+        <span class="keyword">super</span>(nama, umur); <span class="comment">// Memanggil constructor induk</span>
+        <span class="keyword">this</span>.nim = nim;
+        <span class="keyword">this</span>.jurusan = jurusan;
+    }
+    
+    belajar() {
+        <span class="keyword">return</span> <span class="string">`${this.nama} sedang belajar di jurusan ${this.jurusan}`</span>;
+    }
+}</pre>
+                </div>
+                
+                <button class="btn" onclick="demoInheritance()">Jalankan Demo</button>
+                <div class="output-box" id="inheritanceOutput"></div>
+            </div>
+
+            <!-- POLYMORPHISM -->
+            <div id="polymorphism" class="demo-section">
+                <h2 style="color: #38bdf8; margin-bottom: 20px;">🎭 Polymorphism - Banyak Bentuk</h2>
+                <p style="margin-bottom: 20px;">Method yang sama bisa memiliki perilaku berbeda di class yang berbeda.</p>
+                
+                <div class="code-block">
+                    <pre><span class="keyword">class</span> <span class="class-name">Hewan</span> {
+    bersuara() {
+        <span class="keyword">return</span> <span class="string">"Hewan bersuara"</span>;
+    }
+}
+
+<span class="keyword">class</span> <span class="class-name">Kucing</span> <span class="keyword">extends</span> <span class="class-name">Hewan</span> {
+    bersuara() {
+        <span class="keyword">return</span> <span class="string">"Meong meong!"</span>;
+    }
+}
+
+<span class="keyword">class</span> <span class="class-name">Anjing</span> <span class="keyword">extends</span> <span class="class-name">Hewan</span> {
+    bersuara() {
+        <span class="keyword">return</span> <span class="string">"Guk guk!"</span>;
+    }
+}
+
+<span class="keyword">class</span> <span class="class-name">Sapi</span> <span class="keyword">extends</span> <span class="class-name">Hewan</span> {
+    bersuara() {
+        <span class="keyword">return</span> <span class="string">"Mooo!"</span>;
+    }
+}</pre>
+                </div>
+                
+                <button class="btn" onclick="demoPolymorphism()">Dengar Suara Hewan</button>
+                <div class="output-box" id="polymorphismOutput"></div>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 - Implementasi OOP | Hadyan Moch Haeza - Teknik Informatika
+        </footer>
+
+        <footer>
+            © 2026 - Blog OOP | Teknik Informatika
+        </footer>
+
+<script>
+        // Class definitions
+        class Mobil {
+            constructor(merek, warna, tahun) {
+                this.merek = merek;
+                this.warna = warna;
+                this.tahun = tahun;
+            }
+            
+            info() {
+                return `Mobil ${this.merek} warna ${this.warna} tahun ${this.tahun}`;
+            }
+        }
+
+        class Mahasiswa {
+            constructor(nama, nim, jurusan, ipk) {
+                this.nama = nama;
+                this.nim = nim;
+                this.jurusan = jurusan;
+                this.ipk = ipk;
+            }
+        }
+
+        class Kalkulator {
+            tambah(a, b) { return a + b; }
+            kurang(a, b) { return a - b; }
+            kali(a, b) { return a * b; }
+            bagi(a, b) { return b !== 0 ? a / b : "Error: Tidak bisa dibagi 0"; }
+        }
+
+        class RekeningBank {
+            #saldo;
+            
+            constructor(saldoAwal) {
+                this.#saldo = saldoAwal;
+            }
+            
+            getSaldo() {
+                return this.#saldo;
+            }
+            
+            deposit(jumlah) {
+                if (jumlah > 0) {
+                    this.#saldo += jumlah;
+                    return `Deposit berhasil! Saldo: Rp ${this.#saldo.toLocaleString('id-ID')}`;
+                }
+                return "Jumlah harus positif!";
+            }
+            
+            tarikTunai(jumlah) {
+                if (jumlah > this.#saldo) {
+                    return "Saldo tidak cukup!";
+                }
+                this.#saldo -= jumlah;
+                return `Penarikan berhasil! Saldo: Rp ${this.#saldo.toLocaleString('id-ID')}`;
+            }
+        }
+
+        class Manusia {
+            constructor(nama, umur) {
+                this.nama = nama;
+                this.umur = umur;
+            }
+            
+            perkenalan() {
+                return `Halo, nama saya ${this.nama}, umur ${this.umur} tahun`;
+            }
+        }
+
+        class MahasiswaInherit extends Manusia {
+            constructor(nama, umur, nim, jurusan) {
+                super(nama, umur);
+                this.nim = nim;
+                this.jurusan = jurusan;
+            }
+            
+            belajar() {
+                return `${this.nama} sedang belajar di jurusan ${this.jurusan}`;
+            }
+        }
+
+        class Hewan {
+            bersuara() {
+                return "Hewan bersuara";
+            }
+        }
+
+        class Kucing extends Hewan {
+            bersuara() {
+                return "🐱 Meong meong!";
+            }
+        }
+
+        class Anjing extends Hewan {
+            bersuara() {
+                return "🐕 Guk guk!";
+            }
+        }
+
+        class Sapi extends Hewan {
+            bersuara() {
+                return "🐄 Mooo!";
+            }
+        }
+
+        // Global variables
+        let rekening = new RekeningBank(100000);
+        const calc = new Kalkulator();
+
+        // Tab functions
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.demo-section');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Demo functions
+        function demoClass() {
+            const output = document.getElementById('classOutput');
+            output.innerHTML = `
+                <div class="output-title">✅ Output:</div>
+                <p>Class Mobil telah didefinisikan dengan:</p>
+                <p>📌 Attributes: merek, warna, tahun</p>
+                <p>📌 Method: info()</p>
+                <p style="margin-top: 15px; color: #10b981;">Class adalah template, bukan object yang bisa dipakai langsung. Untuk menggunakannya, kita harus membuat object dari class ini.</p>
+            `;
+        }
+
+        function demoObject() {
+            const merek = document.getElementById('merekInput').value || "Toyota Avanza";
+            const warna = document.getElementById('warnaInput').value || "Hitam";
+            const tahun = document.getElementById('tahunInput').value || 2023;
+            
+            const mobil = new Mobil(merek, warna, tahun);
+            const output = document.getElementById('objectOutput');
+            
+            output.innerHTML = `
+                <div class="output-title">✅ Object berhasil dibuat:</div>
+                <p style="color: #10b981; font-size: 18px; margin-top: 10px;">${mobil.info()}</p>
+                <p style="margin-top: 15px;">Object ini adalah instance dari class Mobil dengan data spesifik yang Anda masukkan.</p>
+            `;
+        }
+
+        function demoAttribute() {
+            const mhs = new Mahasiswa("Hadyan Moch Haeza", "123456789", "Teknik Informatika", 3.85);
+            const output = document.getElementById('attributeOutput');
+            
+            output.innerHTML = `
+                <div class="output-title">✅ Attributes dari Object Mahasiswa:</div>
+                <p><span class="highlight">Nama:</span> ${mhs.nama}</p>
+                <p><span class="highlight">NIM:</span> ${mhs.nim}</p>
+                <p><span class="highlight">Jurusan:</span> ${mhs.jurusan}</p>
+                <p><span class="highlight">IPK:</span> ${mhs.ipk}</p>
+                <p style="margin-top: 15px; color: #94a3b8;">Setiap attribute menyimpan data spesifik dari object ini.</p>
+            `;
+        }
+
+        function demoMethod(operasi) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const output = document.getElementById('methodOutput');
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                output.innerHTML = `
+                    <div class="output-title">⚠️ Error:</div>
+                    <p>Silakan masukkan kedua angka terlebih dahulu!</p>
+                `;
+                return;
+            }
+            
+            let hasil;
+            let operasiText;
+            
+            switch(operasi) {
+                case 'tambah':
+                    hasil = calc.tambah(num1, num2);
+                    operasiText = `${num1} + ${num2}`;
+                    break;
+                case 'kurang':
+                    hasil = calc.kurang(num1, num2);
+                    operasiText = `${num1} - ${num2}`;
+                    break;
+                case 'kali':
+                    hasil = calc.kali(num1, num2);
+                    operasiText = `${num1} × ${num2}`;
+                    break;
+                case 'bagi':
+                    hasil = calc.bagi(num1, num2);
+                    operasiText = `${num1} ÷ ${num2}`;
+                    break;
+            }
+            
+            output.innerHTML = `
+                <div class="output-title">✅ Hasil Perhitungan:</div>
+                <p style="font-size: 20px; color: #10b981; margin-top: 10px;">${operasiText} = <span class="highlight">${hasil}</span></p>
+                <p style="margin-top: 15px; color: #94a3b8;">Method <strong>${operasi}()</strong> telah dijalankan!</p>
+            `;
+        }
+
+        function demoEncapsulation(aksi) {
+            const output = document.getElementById('encapsulationOutput');
+            
+            if (aksi === 'cek') {
+                output.innerHTML = `
+                    <div class="output-title">💰 Saldo Rekening:</div>
+                    <p style="font-size: 24px; color: #10b981; margin-top: 10px;">Rp ${rekening.getSaldo().toLocaleString('id-ID')}</p>
+                    <p style="margin-top: 15px; color: #94a3b8;">Saldo hanya bisa diakses melalui method getSaldo(), bukan langsung!</p>
+                `;
+                return;
+            }
+            
+            const jumlah = parseFloat(document.getElementById('transaksi').value);
+            
+            if (isNaN(jumlah) || jumlah <= 0) {
+                output.innerHTML = `
+                    <div class="output-title">⚠️ Error:</div>
+                    <p>Masukkan jumlah yang valid!</p>
+                `;
+                return;
+            }
+            
+            let pesan;
+            if (aksi === 'deposit') {
+                pesan = rekening.deposit(jumlah);
+            } else if (aksi === 'tarik') {
+                pesan = rekening.tarikTunai(jumlah);
+            }
+            
+            output.innerHTML = `
+                <div class="output-title">✅ Transaksi:</div>
+                <p style="font-size: 18px; color: #10b981; margin-top: 10px;">${pesan}</p>
+                <p style="margin-top: 15px; color: #94a3b8;">🔒 Data saldo dilindungi dengan encapsulation (private #saldo)</p>
+            `;
+        }
+
+        function demoInheritance() {
+            const output = document.getElementById('inheritanceOutput');
+            
+            const manusia = new Manusia("Budi", 25);
+            const mahasiswa = new MahasiswaInherit("Hadyan", 20, "123456789", "Teknik Informatika");
+            
+            output.innerHTML = `
+                <div class="output-title">✅ Demo Inheritance:</div>
+                
+                <div class="card">
+                    <h3>👤 Object Manusia (Class Induk)</h3>
+                    <p>${manusia.perkenalan()}</p>
+                    <p style="color: #64748b; margin-top: 10px;">Method yang tersedia: perkenalan()</p>
+                </div>
+                
+                <div class="card">
+                    <h3>🎓 Object Mahasiswa (Class Anak)</h3>
+                    <p>${mahasiswa.perkenalan()}</p>
+                    <p>${mahasiswa.belajar()}</p>
+                    <p style="color: #64748b; margin-top: 10px;">Mewarisi: perkenalan() + Method baru: belajar()</p>
+                    <p style="color: #38bdf8; margin-top: 5px;">✨ NIM: ${mahasiswa.nim} | Jurusan: ${mahasiswa.jurusan}</p>
+                </div>
+                
+                <p style="margin-top: 20px; color: #10b981; font-weight: bold;">
+                    Class Mahasiswa mewarisi semua attribute dan method dari class Manusia, 
+                    plus punya attribute dan method tambahan sendiri!
+                </p>
+            `;
+        }
+
+        function demoPolymorphism() {
+            const output = document.getElementById('polymorphismOutput');
+            
+            const kucing = new Kucing();
+            const anjing = new Anjing();
+            const sapi = new Sapi();
+            
+            output.innerHTML = `
+                <div class="output-title">✅ Polymorphism - Method Sama, Perilaku Beda:</div>
+                
+                <div class="card">
+                    <h3>Method bersuara() dipanggil pada berbagai hewan:</h3>
+                    <p style="font-size: 20px; margin: 10px 0;">${kucing.bersuara()}</p>
+                    <p style="font-size: 20px; margin: 10px 0;">${anjing.bersuara()}</p>
+                    <p style="font-size: 20px; margin: 10px 0;">${sapi.bersuara()}</p>
+                </div>
+                
+                <div class="card" style="background: #1e293b;">
+                    <h3 style="color: #10b981;">🎯 Konsep Polymorphism:</h3>
+                    <p>• Semua class punya method <span class="highlight">bersuara()</span></p>
+                    <p>• Tapi hasilnya <strong>berbeda-beda</strong> sesuai jenis hewannya</p>
+                    <p>• Ini adalah "many forms" - satu method, banyak bentuk implementasi</p>
+                </div>
+                
+                <p style="margin-top: 20px; color: #38bdf8; font-weight: bold;">
+                    💡 Dalam kehidupan nyata: Semua kendaraan punya method "bergerak()", 
+                    tapi mobil bergerak dengan roda, pesawat dengan sayap, kapal dengan baling-baling!
+                </p>
+            `;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 OOP Interactive Demo loaded successfully!');
+        });
+    </script>
+
+</body>
+</html>
