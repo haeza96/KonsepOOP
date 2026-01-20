@@ -61,8 +61,8 @@ Class belum bisa digunakan langsung sebelum dibuat object-nya.
 
 ### 1️⃣ Class
 
-Penjelasan:
-Class adalah template atau rancangan dasar untuk membuat sebuah object.
+**Penjelasan:**
+Class adalah **template atau rancangan** dasar untuk membuat sebuah object.
 Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belum menjadi objek nyata dan belum bisa digunakan langsung.
 
 Analogi:
