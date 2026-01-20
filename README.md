@@ -57,24 +57,24 @@ Setelah mempelajari blog ini, diharapkan mahasiswa mampu:
 ### 1️⃣ Class
 
 **Penjelasan:**
-Class adalah **template atau rancangan** dasar untuk membuat sebuah object.
-Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belum menjadi objek nyata dan belum bisa digunakan langsung.
+- Class adalah **template atau rancangan** dasar untuk membuat sebuah object.
+- Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belum menjadi objek nyata dan belum bisa digunakan langsung.
 
 **Analogi:**
-Class seperti desain rumah yang dibuat oleh arsitek.
-Desain tersebut menentukan jumlah kamar, pintu, dan jendela.
-Namun, rumahnya belum ada sampai benar-benar dibangun.
+- Class seperti desain rumah yang dibuat oleh arsitek.
+- Desain tersebut menentukan jumlah kamar, pintu, dan jendela.
+- Namun, rumahnya belum ada sampai benar-benar dibangun.
 
 ### 2️⃣ Object
 
 **Penjelasan:**  
-Object adalah wujud nyata dari sebuah class.
-Object dibuat berdasarkan class dan memiliki nilai attribute yang spesifik.
+- Object adalah wujud nyata dari sebuah class.
+- Object dibuat berdasarkan class dan memiliki nilai attribute yang spesifik.
 
 **Analogi:**
-Object adalah rumah yang sudah dibangun dari desain rumah.
-Rumah tersebut bisa dihuni dan digunakan.
-Setiap rumah bisa berbeda walaupun berasal dari desain yang sama.
+- Object adalah rumah yang sudah dibangun dari desain rumah.
+- Rumah tersebut bisa dihuni dan digunakan.
+- Setiap rumah bisa berbeda walaupun berasal dari desain yang sama.
 
 ### 3️⃣ Attribute
 
