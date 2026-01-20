@@ -2,11 +2,9 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7 Konsep OOP</title>
-    <link rel="stylesheet" href="style.css">
     
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
 
@@ -33,7 +31,6 @@
             Pemrograman berbasis objek yang menggunakan konsep seperti class, object, attribute, method,
             encapsulation, inheritance, dan polymorphism.
         </p>
-        <p>pada blog ini adalah tujuh konsep dasar Object Oriented Programming, yaitu Class, Object, Attribute, Method, Encapsulation, Inheritance, dan Polymorphism yang diimplementasikan menggunakan bahasa pemrograman JavaScript.”</p>
     </div>
 
     <!-- TABEL OOP -->
@@ -181,17 +178,15 @@ console.log(mobil2.info());</pre>
                 <p style="margin-bottom: 20px;">Attribute adalah data/ciri yang dimiliki oleh object.</p>
                 
                 <div class="code-block">
-                    <pre><span class="keyword">class</span> <span class="class-name">Mahasiswa</span> {
-    nama;
-    nim;
-    jurusan;
-    ipk;
+                    <pre><span class="keyword">class</span> <span class="class-name">Mobil</span> {
+    merek;
+    warna;
+    tahun;
     
-    <span class="keyword">constructor</span>(nama, nim, jurusan, ipk) {
-        <span class="keyword">this</span>.nama = nama;
-        <span class="keyword">this</span>.nim = nim;
-        <span class="keyword">this</span>.jurusan = jurusan;
-        <span class="keyword">this</span>.ipk = ipk;
+    <span class="keyword">constructor</span>(merek, warna, tahun) {
+        <span class="keyword">this</span>.merek = merek;
+        <span class="keyword">this</span>.warna = warna;
+        <span class="keyword">this</span>.tahun = tahun;
     }
 }</pre>
                 </div>
@@ -364,13 +359,11 @@ console.log(mobil2.info());</pre>
         </div>
 
         <footer>
-            © 2026 - Implementasi OOP | Hadyan Moch Haeza - Teknik Informatika
+            © 2026 – Implementasi OOP | Hadyan Moch Haeza – Teknik Informatika
         </footer>
 
-        <footer>
-            © 2026 - Blog OOP | Teknik Informatika
-        </footer>
-    <script src="script.js"></script>
-
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <script src="{{ asset('js/script.js') }}"></script>
+        <script src="script.js"></script>
 </body>
 </html>
