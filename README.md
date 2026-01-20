@@ -55,17 +55,12 @@ Setelah mempelajari blog ini, diharapkan mahasiswa mampu:
 ## 🧩 Penjelasan Program & Contoh Output
 
 ### 1️⃣ Class
-**Penjelasan:**  
-Class adalah **template atau rancangan** untuk membuat object.  
-Class belum bisa digunakan langsung sebelum dibuat object-nya.
-
-### 1️⃣ Class
 
 **Penjelasan:**
 Class adalah **template atau rancangan** dasar untuk membuat sebuah object.
 Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belum menjadi objek nyata dan belum bisa digunakan langsung.
 
-Analogi:
+**Analogi:**
 Class seperti desain rumah yang dibuat oleh arsitek.
 Desain tersebut menentukan jumlah kamar, pintu, dan jendela.
 Namun, rumahnya belum ada sampai benar-benar dibangun.
@@ -76,7 +71,7 @@ Namun, rumahnya belum ada sampai benar-benar dibangun.
 Object adalah wujud nyata dari sebuah class.
 Object dibuat berdasarkan class dan memiliki nilai attribute yang spesifik.
 
-Analogi:
+**Analogi:**
 Object adalah rumah yang sudah dibangun dari desain rumah.
 Rumah tersebut bisa dihuni dan digunakan.
 Setiap rumah bisa berbeda walaupun berasal dari desain yang sama.
@@ -87,7 +82,7 @@ Setiap rumah bisa berbeda walaupun berasal dari desain yang sama.
 Attribute adalah data atau ciri-ciri yang dimiliki oleh sebuah object.
 Attribute digunakan untuk menyimpan informasi tentang keadaan object.
 
-Analogi:
+**Analogi:**
 Manusia memiliki nama dan umur, mobil memiliki merek dan warna.
 Manusia memiliki nama, umur, dan tinggi badan.
 Ciri-ciri tersebut membedakan satu orang dengan orang lain.
@@ -99,7 +94,7 @@ Itulah yang disebut attribute pada object.
 Method adalah aksi atau perilaku yang bisa dilakukan oleh object.
 Method menunjukkan fungsi atau kemampuan dari object tersebut.
 
-Analogi:
+**Analogi:**
 Manusia bisa berjalan, berbicara, kalkulator, dan bekerja.
 Semua aktivitas tersebut adalah tindakan yang dilakukan manusia.
 Dalam OOP, tindakan tersebut disebut method.
@@ -110,7 +105,7 @@ Dalam OOP, tindakan tersebut disebut method.
 Encapsulation adalah konsep melindungi data agar tidak bisa diakses atau diubah secara langsung dari luar object.
 Akses data dilakukan melalui method tertentu.
 
-Analogi:
+**Analogi:**
 Saldo ATM hanya bisa diakses melalui proses resmi, bukan diubah sembarangan.
 Saldo rekening bank tidak bisa diubah secara langsung oleh nasabah.
 Nasabah harus melalui proses setor atau tarik uang.
@@ -122,7 +117,7 @@ Cara ini menjaga keamanan data keuangan.
 Inheritance adalah konsep pewarisan sifat dari class induk ke class anak.
 Class anak dapat menggunakan attribute dan method milik class induk, serta menambahkan fitur baru.
 
-Analogi:
+**Analogi:**
 Anak mewarisi sifat fisik dari orang tuanya.
 Misalnya warna rambut atau bentuk wajah.
 Namun, anak tetap bisa memiliki ciri khas sendiri.
@@ -132,7 +127,7 @@ Namun, anak tetap bisa memiliki ciri khas sendiri.
 **Penjelasan:**  
 Polymorphism berarti satu method yang sama dapat memiliki perilaku berbeda tergantung object yang menggunakannya.
 
-Analogi:
+**Analogi:**
 Semua hewan bersuara, tetapi suara setiap hewan berbeda.
 Namun, kucing bersuara meong, anjing menggonggong, dan sapi melenguh.
 Inilah contoh satu perilaku dengan banyak bentuk.
