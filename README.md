@@ -79,55 +79,55 @@ Setelah mempelajari blog ini, diharapkan mahasiswa mampu:
 ### 3️⃣ Attribute
 
 **Penjelasan:**  
-Attribute adalah data atau ciri-ciri yang dimiliki oleh sebuah object.
-Attribute digunakan untuk menyimpan informasi tentang keadaan object.
+- Attribute adalah data atau ciri-ciri yang dimiliki oleh sebuah object.
+- Attribute digunakan untuk menyimpan informasi tentang keadaan object.
 
 **Analogi:**
-Manusia memiliki nama dan umur, mobil memiliki merek dan warna.
-Manusia memiliki nama, umur, dan tinggi badan.
-Ciri-ciri tersebut membedakan satu orang dengan orang lain.
-Itulah yang disebut attribute pada object.
+- Manusia memiliki nama dan umur, mobil memiliki merek dan warna.
+- Manusia memiliki nama, umur, dan tinggi badan.
+- Ciri-ciri tersebut membedakan satu orang dengan orang lain.
+- Itulah yang disebut attribute pada object.
 
 ### 4️⃣ Method
 
 **Penjelasan:**  
-Method adalah aksi atau perilaku yang bisa dilakukan oleh object.
-Method menunjukkan fungsi atau kemampuan dari object tersebut.
+- Method adalah aksi atau perilaku yang bisa dilakukan oleh object.
+- Method menunjukkan fungsi atau kemampuan dari object tersebut.
 
 **Analogi:**
-Manusia bisa berjalan, berbicara, kalkulator, dan bekerja.
-Semua aktivitas tersebut adalah tindakan yang dilakukan manusia.
-Dalam OOP, tindakan tersebut disebut method.
+- Manusia bisa berjalan, berbicara, kalkulator, dan bekerja.
+- Semua aktivitas tersebut adalah tindakan yang dilakukan manusia.
+- Dalam OOP, tindakan tersebut disebut method.
 
 ### 5️⃣ Encapsulation
 
 **Penjelasan:**  
-Encapsulation adalah konsep melindungi data agar tidak bisa diakses atau diubah secara langsung dari luar object.
+- Encapsulation adalah konsep melindungi data agar tidak bisa diakses atau diubah secara langsung dari luar object.
 Akses data dilakukan melalui method tertentu.
 
 **Analogi:**
-Saldo ATM hanya bisa diakses melalui proses resmi, bukan diubah sembarangan.
-Saldo rekening bank tidak bisa diubah secara langsung oleh nasabah.
-Nasabah harus melalui proses setor atau tarik uang.
-Cara ini menjaga keamanan data keuangan.
+- Saldo ATM hanya bisa diakses melalui proses resmi, bukan diubah sembarangan.
+- Saldo rekening bank tidak bisa diubah secara langsung oleh nasabah.
+- Nasabah harus melalui proses setor atau tarik uang.
+- Cara ini menjaga keamanan data keuangan.
 
 ### 6️⃣ Inheritance
 
 **Penjelasan:**  
-Inheritance adalah konsep pewarisan sifat dari class induk ke class anak.
-Class anak dapat menggunakan attribute dan method milik class induk, serta menambahkan fitur baru.
+- Inheritance adalah konsep pewarisan sifat dari class induk ke class anak.
+- Class anak dapat menggunakan attribute dan method milik class induk, serta menambahkan fitur baru.
 
 **Analogi:**
-Anak mewarisi sifat fisik dari orang tuanya.
-Misalnya warna rambut atau bentuk wajah.
-Namun, anak tetap bisa memiliki ciri khas sendiri.
+- Anak mewarisi sifat fisik dari orang tuanya.
+- Misalnya warna rambut atau bentuk wajah.
+- Namun, anak tetap bisa memiliki ciri khas sendiri.
 
 ### 7️⃣ Polymorphism
 
 **Penjelasan:**  
-Polymorphism berarti satu method yang sama dapat memiliki perilaku berbeda tergantung object yang menggunakannya.
+- Polymorphism berarti satu method yang sama dapat memiliki perilaku berbeda tergantung object yang menggunakannya.
 
 **Analogi:**
-Semua hewan bersuara, tetapi suara setiap hewan berbeda.
-Namun, kucing bersuara meong, anjing menggonggong, dan sapi melenguh.
-Inilah contoh satu perilaku dengan banyak bentuk.
+- Semua hewan bersuara, tetapi suara setiap hewan berbeda.
+- Namun, kucing bersuara meong, anjing menggonggong, dan sapi melenguh.
+- Inilah contoh satu perilaku dengan banyak bentuk.
