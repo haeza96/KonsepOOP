@@ -14,8 +14,9 @@ Blog pembelajaran 7 Konsep Object Oriented Programming (OOP) menggunakan Java.
 
 ## 🧠 Deskripsi Proyek
 
-Repository ini berisi **Blog Interaktif 7 Konsep Dasar Object Oriented Programming (OOP)** yang dibuat menggunakan **HTML, CSS, dan JavaScript**.  
+Repository ini berisi **Blog Interaktif 7 Konsep Dasar Object Oriented Programming (OOP)** yang dibuat menggunakan **JavaScript**.  
 Proyek ini bertujuan untuk membantu mahasiswa memahami konsep OOP **tidak hanya secara teori**, tetapi juga melalui **contoh program langsung dan hasil tampilannya**.
+
 
 Setiap konsep OOP dijelaskan dengan:
 - Penjelasan sederhana (bahasa manusia)
@@ -58,17 +59,21 @@ Setelah mempelajari blog ini, diharapkan mahasiswa mampu:
 Class adalah **template atau rancangan** untuk membuat object.  
 Class belum bisa digunakan langsung sebelum dibuat object-nya.
 
-**Contoh Program:**
-```javascript
-class Mobil {
-    constructor(merek, warna, tahun) {
-        this.merek = merek;
-        this.warna = warna;
-        this.tahun = tahun;
-    }
+1️⃣ Class
 
-    info() {
-        return `Mobil ${this.merek} warna ${this.warna} tahun ${this.tahun}`;
-    }
-}
+Penjelasan:
+Class adalah template atau rancangan dasar untuk membuat sebuah object.
+Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belum menjadi objek nyata dan belum bisa digunakan langsung.
+
+Analogi:
+Class seperti desain rumah sebelum rumah tersebut dibangun.
+
+2️⃣ Object
+
+Penjelasan:
+Object adalah wujud nyata dari sebuah class.
+Object dibuat berdasarkan class dan memiliki nilai attribute yang spesifik.
+
+Analogi:
+Rumah yang sudah dibangun berdasarkan desain rumah.
 
