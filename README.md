@@ -66,7 +66,9 @@ Class adalah **template atau rancangan** dasar untuk membuat sebuah object.
 Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belum menjadi objek nyata dan belum bisa digunakan langsung.
 
 Analogi:
-Class seperti desain rumah sebelum rumah tersebut dibangun.
+Class seperti desain rumah yang dibuat oleh arsitek.
+Desain tersebut menentukan jumlah kamar, pintu, dan jendela.
+Namun, rumahnya belum ada sampai benar-benar dibangun.
 
 ### 2️⃣ Object
 
@@ -75,7 +77,9 @@ Object adalah wujud nyata dari sebuah class.
 Object dibuat berdasarkan class dan memiliki nilai attribute yang spesifik.
 
 Analogi:
-Rumah yang sudah dibangun berdasarkan desain rumah.
+Object adalah rumah yang sudah dibangun dari desain rumah.
+Rumah tersebut bisa dihuni dan digunakan.
+Setiap rumah bisa berbeda walaupun berasal dari desain yang sama.
 
 ### 3️⃣ Attribute
 
@@ -85,6 +89,9 @@ Attribute digunakan untuk menyimpan informasi tentang keadaan object.
 
 Analogi:
 Manusia memiliki nama dan umur, mobil memiliki merek dan warna.
+Manusia memiliki nama, umur, dan tinggi badan.
+Ciri-ciri tersebut membedakan satu orang dengan orang lain.
+Itulah yang disebut attribute pada object.
 
 ### 4️⃣ Method
 
@@ -93,7 +100,9 @@ Method adalah aksi atau perilaku yang bisa dilakukan oleh object.
 Method menunjukkan fungsi atau kemampuan dari object tersebut.
 
 Analogi:
-Manusia bisa berjalan dan berbicara, kalkulator bisa menghitung.
+Manusia bisa berjalan, berbicara, kalkulator, dan bekerja.
+Semua aktivitas tersebut adalah tindakan yang dilakukan manusia.
+Dalam OOP, tindakan tersebut disebut method.
 
 ### 5️⃣ Encapsulation
 
@@ -103,6 +112,9 @@ Akses data dilakukan melalui method tertentu.
 
 Analogi:
 Saldo ATM hanya bisa diakses melalui proses resmi, bukan diubah sembarangan.
+Saldo rekening bank tidak bisa diubah secara langsung oleh nasabah.
+Nasabah harus melalui proses setor atau tarik uang.
+Cara ini menjaga keamanan data keuangan.
 
 ### 6️⃣ Inheritance
 
@@ -111,7 +123,9 @@ Inheritance adalah konsep pewarisan sifat dari class induk ke class anak.
 Class anak dapat menggunakan attribute dan method milik class induk, serta menambahkan fitur baru.
 
 Analogi:
-Anak mewarisi sifat orang tua.
+Anak mewarisi sifat fisik dari orang tuanya.
+Misalnya warna rambut atau bentuk wajah.
+Namun, anak tetap bisa memiliki ciri khas sendiri.
 
 ### 7️⃣ Polymorphism
 
@@ -120,3 +134,5 @@ Polymorphism berarti satu method yang sama dapat memiliki perilaku berbeda terga
 
 Analogi:
 Semua hewan bersuara, tetapi suara setiap hewan berbeda.
+Namun, kucing bersuara meong, anjing menggonggong, dan sapi melenguh.
+Inilah contoh satu perilaku dengan banyak bentuk.
