@@ -59,7 +59,7 @@ Setelah mempelajari blog ini, diharapkan mahasiswa mampu:
 Class adalah **template atau rancangan** untuk membuat object.  
 Class belum bisa digunakan langsung sebelum dibuat object-nya.
 
-1️⃣ Class
+### 1️⃣ Class
 
 Penjelasan:
 Class adalah template atau rancangan dasar untuk membuat sebuah object.
@@ -68,12 +68,55 @@ Class mendefinisikan attribute dan method yang akan dimiliki object, tetapi belu
 Analogi:
 Class seperti desain rumah sebelum rumah tersebut dibangun.
 
-2️⃣ Object
+### 2️⃣ Object
 
-Penjelasan:
+**Penjelasan:**  
 Object adalah wujud nyata dari sebuah class.
 Object dibuat berdasarkan class dan memiliki nilai attribute yang spesifik.
 
 Analogi:
 Rumah yang sudah dibangun berdasarkan desain rumah.
 
+### 3️⃣ Attribute
+
+**Penjelasan:**  
+Attribute adalah data atau ciri-ciri yang dimiliki oleh sebuah object.
+Attribute digunakan untuk menyimpan informasi tentang keadaan object.
+
+Analogi:
+Manusia memiliki nama dan umur, mobil memiliki merek dan warna.
+
+### 4️⃣ Method
+
+**Penjelasan:**  
+Method adalah aksi atau perilaku yang bisa dilakukan oleh object.
+Method menunjukkan fungsi atau kemampuan dari object tersebut.
+
+Analogi:
+Manusia bisa berjalan dan berbicara, kalkulator bisa menghitung.
+
+### 5️⃣ Encapsulation
+
+**Penjelasan:**  
+Encapsulation adalah konsep melindungi data agar tidak bisa diakses atau diubah secara langsung dari luar object.
+Akses data dilakukan melalui method tertentu.
+
+Analogi:
+Saldo ATM hanya bisa diakses melalui proses resmi, bukan diubah sembarangan.
+
+### 6️⃣ Inheritance
+
+**Penjelasan:**  
+Inheritance adalah konsep pewarisan sifat dari class induk ke class anak.
+Class anak dapat menggunakan attribute dan method milik class induk, serta menambahkan fitur baru.
+
+Analogi:
+Anak mewarisi sifat orang tua.
+
+### 7️⃣ Polymorphism
+
+**Penjelasan:**  
+Polymorphism berarti satu method yang sama dapat memiliki perilaku berbeda tergantung object yang menggunakannya.
+
+Analogi:
+Semua hewan bersuara, tetapi suara setiap hewan berbeda.
