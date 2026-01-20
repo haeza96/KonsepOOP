@@ -4,17 +4,17 @@ Blog pembelajaran 7 Konsep Object Oriented Programming (OOP) menggunakan Java.
 # Blog Interaktif 7 Konsep Object Oriented Programming (OOP)
 
 ## 👤 Identitas
-- **Nama** : Hadyan Moch Haeza  
-- **NIM** : 123456789  
+- **Nama** : Hadyan Mochammad Haeza  
+- **NIM** : 422411009
 - **Jurusan** : Teknik Informatika  
 - **Mata Kuliah** : Pemrograman Berorientasi Objek  
-- **Bahasa Pemrograman** : JavaScript  
+- **Bahasa Pemrograman** : Java 
 
 ---
 
 ## 🧠 Deskripsi Proyek
 
-Repository ini berisi **Blog Interaktif 7 Konsep Dasar Object Oriented Programming (OOP)** yang dibuat menggunakan **JavaScript**.  
+Repository ini berisi **Blog Interaktif 7 Konsep Dasar Object Oriented Programming (OOP)** yang dibuat menggunakan **Java**.  
 Proyek ini bertujuan untuk membantu mahasiswa memahami konsep OOP **tidak hanya secara teori**, tetapi juga melalui **contoh program langsung dan hasil tampilannya**.
 
 
