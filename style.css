@@ -243,3 +243,14 @@ padding: 20px;
 color: #64748b;
 margin-top: 40px;
 }
+
+tbody tr:nth-child(1),
+tbody tr:nth-child(2),
+tbody tr:nth-child(3),
+tbody tr:nth-child(4) {
+background-color: #256440;
+}
+
+thead tr {
+background-color: #1b254b;
+}
