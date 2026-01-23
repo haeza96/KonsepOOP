@@ -42,7 +42,7 @@ box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
 margin: 6px 0;
 }
 
-.profile-grid img {
+img {
     width: 100%;          /* mengikuti lebar container */
     max-width: 50px;     /* batas maksimal (boleh diubah) */
     height: auto;         /* proporsi gambar aman */
