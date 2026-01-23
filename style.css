@@ -44,7 +44,7 @@ margin: 6px 0;
 
 .profile-grid img {
     width: 100%;          /* mengikuti lebar container */
-    max-width: 500px;     /* batas maksimal (boleh diubah) */
+    max-width: 50px;     /* batas maksimal (boleh diubah) */
     height: auto;         /* proporsi gambar aman */
     display: block;
     margin: 0 auto;       /* posisi tengah */
